@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(~/.aws/**)",
+      "Read(~/.ssh/**)",
+      "Read(~/.config/gh/**)",
+      "Read(~/apps/LibreChat/.env)",
+      "Read(~/code/cloud-automation-portfolio/stacks/n8n/.env)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false,
+    "filesystem": {
+      "denyRead": [
+        "~/.aws",
+        "~/.ssh",
+        "~/.config/gh",
+        "~/apps/LibreChat/.env",
+        "~/code/cloud-automation-portfolio/stacks/n8n/.env"
+      ]
+    }
+  },
+  "theme": "dark",
+  "tui": "fullscreen"
+}
