@@ -1,0 +1,19 @@
+# Local overrides for LibreChat v0.8.8
+# Upstream clone: ~/apps/LibreChat (pinned to tag v0.8.8)
+services:
+  api:
+    image: registry.librechat.ai/librechat-ai/librechat:v0.8.8
+    ports: !override
+      - "127.0.0.1:${PORT}:${PORT}"
+    volumes:
+      - type: bind
+        source: ./librechat.yaml
+        target: /app/librechat.yaml
+
+  admin-panel:
+    image: registry.librechat.ai/clickhouse/librechat-admin-panel@sha256:a395465d1daa3c11495810a8c224df86675985d50de42e98e36eeedbd8aecb94
+    ports: !override
+      - "127.0.0.1:${ADMIN_PANEL_PORT:-3000}:3000"
+
+  rag_api:
+    image: registry.librechat.ai/librechat-ai/librechat-rag-api-dev-lite@sha256:a62ce2221b43a9bb57fa6cb733e7047c80132960272c33d5704028f3071a1251
