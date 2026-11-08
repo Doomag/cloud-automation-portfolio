@@ -1,0 +1,15 @@
+.env
+
+# Python
+.venv/
+__pycache__/
+
+# Node
+node_modules/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
